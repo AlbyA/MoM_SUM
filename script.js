@@ -113,9 +113,18 @@ uploadForm.addEventListener('submit', async (e) => {
     startBtn.disabled = true;
     
     try {
+        // Log file information
+        console.log('Uploading file:', {
+            name: selectedFile.name,
+            size: selectedFile.size,
+            type: selectedFile.type,
+            lastModified: new Date(selectedFile.lastModified).toISOString()
+        });
+        console.log('Sending to webhook:', WEBHOOK_URL);
+        
         // Prepare form data
         const formData = new FormData();
-        formData.append('file', selectedFile);
+        formData.append('MoM', selectedFile);
         
         // Trigger webhook
         // Option 1: Send file directly (if webhook supports multipart/form-data)
@@ -123,6 +132,8 @@ uploadForm.addEventListener('submit', async (e) => {
             method: 'POST',
             body: formData
         });
+        
+        console.log('Webhook response status:', response.status);
         
         // Option 2: If webhook expects JSON, you can send file info instead
         // const response = await fetch(WEBHOOK_URL, {
