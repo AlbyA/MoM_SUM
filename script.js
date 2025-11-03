@@ -14,7 +14,7 @@ const loadingOverlay = document.getElementById('loadingOverlay');
 const WEBHOOK_URL = 'https://toobasparkai.app.n8n.cloud/webhook/upload-MoM';
 
 // Google Sheet URL - Replace with your actual Google Sheet link
-const GOOGLE_SHEET_URL = 'https://docs.google.com/spreadsheets/d/1rEPyuygOr8_zYSX9BPkTnQR96P_ERWQR6ywETbDqVYM/edit?usp=drive_link';
+const GOOGLE_SHEET_URL = 'https://docs.google.com/spreadsheets/d/16mk_BClUz66hbcb0IR7xU93jXic9A8AWdSa618hNf0c/edit?usp=drive_link';
 
 // File handling
 let selectedFile = null;
